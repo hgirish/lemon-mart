@@ -1,13 +1,13 @@
-import { ManagerModule } from './manager.module';
+import { ManagerModule } from './manager.module'
 
 describe('ManagerModule', () => {
-  let managerModule: ManagerModule;
+  let managerModule: ManagerModule
 
   beforeEach(() => {
-    managerModule = new ManagerModule();
-  });
+    managerModule = new ManagerModule()
+  })
 
   it('should create an instance', () => {
-    expect(managerModule).toBeTruthy();
-  });
-});
+    expect(managerModule).toBeTruthy()
+  })
+})

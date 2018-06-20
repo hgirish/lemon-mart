@@ -1,13 +1,13 @@
-import { InventoryModule } from './inventory.module';
+import { InventoryModule } from './inventory.module'
 
 describe('InventoryModule', () => {
-  let inventoryModule: InventoryModule;
+  let inventoryModule: InventoryModule
 
   beforeEach(() => {
-    inventoryModule = new InventoryModule();
-  });
+    inventoryModule = new InventoryModule()
+  })
 
   it('should create an instance', () => {
-    expect(inventoryModule).toBeTruthy();
-  });
-});
+    expect(inventoryModule).toBeTruthy()
+  })
+})

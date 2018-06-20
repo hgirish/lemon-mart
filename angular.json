@@ -19,11 +19,24 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              "src/assets/img/icons/favicon.ico",
+              "src/assets",
+              "src/assets/img/icons",
+              "src/assets/img/icons/android-chrome-192x192.png",
+              "src/assets/img/icons/favicon-16x16.png",
+              "src/assets/img/icons/mstile-310x150.png",
+              "src/assets/img/icons/android-chrome-512x512.png",
+              "src/assets/img/icons/favicon-32x32.png",
+              "src/assets/img/icons/mstile-310x310.png",
+              "src/assets/img/icons/apple-touch-icon.png",
+              "src/assets/img/icons/manifest.json",
+              "src/assets/img/icons/mstile-70x70.png",
+              "src/assets/img/icons/browserconfig.xml",
+              "src/assets/img/icons/mstile-144x144.png",
+              "src/assets/img/icons/safari-pinned-tab.svg",
+              "src/assets/img/icons/mstile-150x150.png"
             ],
-            "styles": [
-              {
+            "styles": [{
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
               },
               "src/styles.css"
@@ -32,12 +45,10 @@
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
+              "fileReplacements": [{
+                "replace": "src/environments/environment.ts",
+                "with": "src/environments/environment.prod.ts"
+              }],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -74,8 +85,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              {
+            "styles": [{
                 "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
               },
               "src/styles.css"
