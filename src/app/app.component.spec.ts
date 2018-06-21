@@ -1,10 +1,26 @@
-import { TestBed, async } from '@angular/core/testing'
-import { RouterTestingModule } from '@angular/router/testing'
+import { async, TestBed } from '@angular/core/testing'
+import { ObservableMedia } from '@angular/flex-layout'
+import { MatIconRegistry } from '@angular/material'
+import { DomSanitizer } from '@angular/platform-browser'
+
 import { AppComponent } from './app.component'
+import {
+  commonTestingModules,
+  commonTestingProviders,
+  DomSanitizerFake,
+  MatIconRegistryFake,
+  ObservableMediaFake,
+} from './common/common-testing'
+
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
+      imports: [commonTestingModules],
+      providers: commonTestingProviders.concat([
+        { provide: ObservableMedia, useClass: ObservableMediaFake },
+        { provide: MatIconRegistry, useClass: MatIconRegistryFake },
+        { provide: DomSanitizer, useClass: DomSanitizerFake },
+      ]),
       declarations: [AppComponent],
     }).compileComponents()
   }))
@@ -22,6 +38,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent)
     fixture.detectChanges()
     const compiled = fixture.debugElement.nativeElement
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to lemon-mart!')
+    expect(compiled.querySelector('a span.mat-h2').textContent).toContain('LemonMart')
   }))
 })
