@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
-import { LogoutComponent } from './logout.component'
+import { InventoryComponent } from './inventory.component'
 
-describe('LogoutComponent', () => {
-  let component: LogoutComponent
-  let fixture: ComponentFixture<LogoutComponent>
+describe('InventoryComponent', () => {
+  let component: InventoryComponent
+  let fixture: ComponentFixture<InventoryComponent>
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [LogoutComponent],
+      declarations: [InventoryComponent],
     }).compileComponents()
   }))
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LogoutComponent)
+    fixture = TestBed.createComponent(InventoryComponent)
     component = fixture.componentInstance
     fixture.detectChanges()
   })
