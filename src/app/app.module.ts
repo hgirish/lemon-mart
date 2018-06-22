@@ -11,10 +11,11 @@ import { AppComponent } from './app.component'
 import { AuthService } from './auth/auth.service'
 import { HomeComponent } from './home/home.component'
 import { LoginComponent } from './login/login.component'
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SimpleDialogComponent } from './common/simple-dialog/simple-dialog.component'
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, PageNotFoundComponent, LoginComponent],
+  declarations: [AppComponent, HomeComponent, PageNotFoundComponent, LoginComponent, SimpleDialogComponent],
   imports: [
     FormsModule,
     ReactiveFormsModule,

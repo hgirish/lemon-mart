@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core'
 import {
   MatButtonModule,
   MatCardModule,
+  MatDialogModule,
   MatFormFieldModule,
   MatIconModule,
   MatInputModule,
+  MatSnackBarModule,
   MatToolbarModule,
 } from '@angular/material'
 
@@ -16,6 +18,8 @@ import {
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSnackBarModule,
+    MatDialogModule,
   ],
   exports: [
     MatButtonModule,
@@ -24,6 +28,8 @@ import {
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSnackBarModule,
+    MatDialogModule,
   ],
   declarations: [],
 })
