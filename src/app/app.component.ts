@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core'
+import { ObservableMedia } from '@angular/flex-layout'
 import { MatIconRegistry } from '@angular/material'
 import { DomSanitizer } from '@angular/platform-browser'
 
@@ -10,12 +11,13 @@ import { AuthService } from './auth/auth.service'
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  displayAccountIcons = false
+  _displayAccountIcons = false
   title = 'app'
   constructor(
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
-    private authService: AuthService
+    private authService: AuthService,
+    public media: ObservableMedia
   ) {
     iconRegistry.addSvgIcon(
       'lemon',
@@ -23,8 +25,13 @@ export class AppComponent implements OnInit {
     )
   }
   ngOnInit() {
-    this.authService.authStatus.subscribe(
-      authStatus => (this.displayAccountIcons = authStatus.isAuthenticated)
-    )
+    this.authService.authStatus.subscribe(authStatus => {
+      setTimeout(() => {
+        this._displayAccountIcons = authStatus.isAuthenticated
+      }, 0)
+    })
+  }
+  get displayAccountIcons() {
+    return this._displayAccountIcons
   }
 }

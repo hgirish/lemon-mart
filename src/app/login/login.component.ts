@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router'
 
 import { AuthService } from '../auth/auth.service'
-import { EmailValidation, PasswordValidation } from '../common/validations'
+import { Role } from '../auth/role.enum'
 import { UiService } from '../common/ui.service'
+import { EmailValidation, PasswordValidation } from '../common/validations'
 
 @Component({
   selector: 'app-login',
@@ -42,8 +43,23 @@ export class LoginComponent implements OnInit {
       .subscribe(authStatus => {
         if (authStatus.isAuthenticated) {
           this.uiService.showToast(`Welcome! Role: ${authStatus.userRole}`)
-          this.router.navigate([this.redirectUrl || '/manager'])
+          this.router.navigate([
+            this.redirectUrl || this.homeRoutePerRole(authStatus.userRole),
+          ])
         }
       }, error => (this.loginError = error))
+  }
+
+  homeRoutePerRole(role: Role) {
+    switch (role) {
+      case Role.Cashier:
+        return '/pos'
+      case Role.Clerk:
+        return '/inventory'
+      case Role.Manager:
+        return '/manager'
+      default:
+        return '/user/profile'
+    }
   }
 }
