@@ -14,16 +14,25 @@ export interface IAuthStatus {
   userRole: Role
   userId: string
 }
-
+export interface IAuthService {
+  authStatus: BehaviorSubject<IAuthStatus>
+  login(email: string, password: string): Observable<IAuthStatus>
+  logout()
+  getToken(): string
+}
 interface IServerAuthResponse {
   accessToken: string
 }
 
-const defaultAuthStatus = { isAuthenticated: false, userRole: Role.None, userId: null }
+export const defaultAuthStatus = {
+  isAuthenticated: false,
+  userRole: Role.None,
+  userId: null,
+}
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService extends CacheService {
+export class AuthService extends CacheService implements IAuthService {
   private readonly authProvider: (
     email: string,
     password: string

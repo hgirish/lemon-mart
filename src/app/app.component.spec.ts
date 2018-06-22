@@ -11,6 +11,7 @@ import {
   MatIconRegistryFake,
   ObservableMediaFake,
 } from './common/common-testing'
+import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component'
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -21,7 +22,7 @@ describe('AppComponent', () => {
         { provide: MatIconRegistry, useClass: MatIconRegistryFake },
         { provide: DomSanitizer, useClass: DomSanitizerFake },
       ]),
-      declarations: [AppComponent],
+      declarations: [AppComponent, NavigationMenuComponent],
     }).compileComponents()
   }))
   it('should create the app', async(() => {
@@ -34,7 +35,7 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance
     expect(app.title).toEqual('app')
   }))
-  it('should render title in a h1 tag', async(() => {
+  it('should render title in a h2 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent)
     fixture.detectChanges()
     const compiled = fixture.debugElement.nativeElement

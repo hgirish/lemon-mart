@@ -1,11 +1,13 @@
-import { TestBed, inject } from '@angular/core/testing'
+import { inject, TestBed } from '@angular/core/testing'
 
+import { commonTestingModules } from './common-testing'
 import { UiService } from './ui.service'
 
 describe('UiService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [UiService],
+      imports: commonTestingModules,
     })
   })
 
