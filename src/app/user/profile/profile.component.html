@@ -26,18 +26,21 @@
             <mat-error *ngIf="userForm.get('name').get('middle').invalid">
               Only Initial
             </mat-error>
-
-            <mat-form-field fxFlex="40%">
-              <input matInput placeholder="Last Name" aria-label="Last Name" formControlName="last">
-              <mat-error *ngIf="userForm.get('name').get('last').hasError('required')">
-                Last Name is required
-              </mat-error>
-              <mat-error *ngIf="userForm.get('name').get('last').hasError('minLength')">
-                Must be at least 2 characters
-              </mat-error>
-              <mat-error *ngIf="userForm.get('name').get('last').hasError('maxLength')">
-                Can't exceed 50 characters
-              </mat-error>
-            </mat-form-field>
-
           </mat-form-field>
+          <mat-form-field fxFlex="40%">
+            <input matInput placeholder="Last Name" aria-label="Last Name" formControlName="last">
+            <mat-error *ngIf="userForm.get('name').get('last').hasError('required')">
+              Last Name is required
+            </mat-error>
+            <mat-error *ngIf="userForm.get('name').get('last').hasError('minLength')">
+              Must be at least 2 characters
+            </mat-error>
+            <mat-error *ngIf="userForm.get('name').get('last').hasError('maxLength')">
+              Can't exceed 50 characters
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </form>
+  </mat-step>
+</mat-horizontal-stepper>

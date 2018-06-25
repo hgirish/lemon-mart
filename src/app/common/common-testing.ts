@@ -3,13 +3,17 @@ import { MediaChange } from '@angular/flex-layout'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { SafeResourceUrl, SafeValue } from '@angular/platform-browser'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'
-import { SecurityContext } from '@angular/platform-browser/src/security/dom_sanitization_service'
+import {
+  SecurityContext,
+} from '@angular/platform-browser/src/security/dom_sanitization_service'
 import { RouterTestingModule } from '@angular/router/testing'
 import { Observable, of, Subscription } from 'rxjs'
 
 import { AppMaterialModule } from '../app-material.module'
 import { AuthService } from '../auth/auth.service'
 import { AuthServiceFake } from '../auth/auth.service.fake'
+import { UserService } from '../user/user/user.service'
+import { UserServiceFake } from '../user/user/user.service.fake'
 import { UiService } from './ui.service'
 
 // tslint:disable-next-line:max-line-length
@@ -74,6 +78,7 @@ export class DomSanitizerFake {
 export const commonTestingProviders: any[] = [
   // intentionally left blank
   { provide: AuthService, useClass: AuthServiceFake },
+  { provide: UserService, useClass: UserServiceFake },
   UiService,
 ]
 

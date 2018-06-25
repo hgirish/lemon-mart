@@ -8,13 +8,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppMaterialModule } from './app-material.module'
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { AuthGuard } from './auth/auth-guard.service'
 import { AuthHttpInterceptor } from './auth/auth-http-interceptor'
 import { AuthService } from './auth/auth.service'
 import { SimpleDialogComponent } from './common/simple-dialog/simple-dialog.component'
+import { UiService } from './common/ui.service'
 import { HomeComponent } from './home/home.component'
 import { LoginComponent } from './login/login.component'
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component'
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
+import { UserService } from './user/user/user.service'
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
   ],
   providers: [
     AuthService,
+    AuthGuard,
+    UiService,
+    UserService,
     { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
