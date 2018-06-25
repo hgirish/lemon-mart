@@ -4,6 +4,7 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { AppMaterialModule } from '../app-material.module'
+import { SharedComponentsModule } from '../shared-components.module'
 import { LogoutComponent } from './logout/logout.component'
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component'
 import { ProfileComponent } from './profile/profile.component'
@@ -19,6 +20,7 @@ import { UserRoutingModule } from './user-routing.module'
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
+    SharedComponentsModule,
   ],
   declarations: [ProfileComponent, LogoutComponent, NavigationMenuComponent],
 })
