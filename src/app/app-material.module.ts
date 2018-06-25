@@ -39,4 +39,4 @@ import {
   ],
   declarations: [],
 })
-export class MaterialModule {}
+export class AppMaterialModule {}
