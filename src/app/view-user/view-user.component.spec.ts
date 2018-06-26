@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing'
 
+import { commonTestingModules } from '../common/common-testing'
 import { ViewUserComponent } from './view-user.component'
 
 describe('ViewUserComponent', () => {
@@ -8,6 +9,7 @@ describe('ViewUserComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: commonTestingModules,
       declarations: [ViewUserComponent],
     }).compileComponents()
   }))
